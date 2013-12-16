@@ -62,49 +62,36 @@
 </html>
 <script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
 <script type="text/javascript">
-/*$(window).resize(function(){
-	var window_width = $(window).width();
-	alert (window_width);
+$(window).resize(function(){
+	var details =  {
+		containerID : '.ul',
+		boxWidth : 202,
+	}	
+	responsiveCraousel(details.boxWidth, details.containerID);
+});
 		
-	if(window_width >= 1000)
-	{
-		$('.box_contianer').css('width', '100%');
-		}
-	else if(window_width <= 1000 && window_width >= 600)
-	{
-		$('.box_contianer').css('width', '800');
-		$('.box_contianer ul li').css('margin', '10px 30px');
-		}
-	else if(window_width <= 600 && window_width >= 400)
-	{
-		$('.box_contianer').css('width', '570px');
-		$('.box_contianer ul li').css('margin', '10px 50px');
-		}
-	else
-	{
-		$('.box_contianer').css('width', '100%');
-		}
 	
-	});	*/
-	
-	$(window).resize(function GetPageWidth(){
-	var window_width = $(window).width();
-	//alert(window_width); //1366
-	//var ul_width = $('.ul').css('width', window_width - 20);
-	
-	var li_count = Math.floor(window_width / 202);	
-	//alert(li_count);	// 6
-
-	var li_margin_total = Math.abs(li_count * 202 - window_width);
-	//alert (li_margin_total);	//154
-	
+function responsiveCraousel(boxWidth, containerID){
+	var window_width = $(window).width();	
+	var li_count = Math.floor(window_width / boxWidth);
+	var li_margin_total = Math.abs(li_count * boxWidth - window_width);
 	var li_margin = (li_margin_total / li_count) / 2 ;
-	//alert(li_margin); 12.5
-	
+	$(containerID + " li").css({
+		'margin-left' : li_margin,
+		'margin-right': li_margin
+	});	
+};
+
+
+/*	$(window).resize(function GetPageWidth(){
+	var window_width = $(window).width();	
+	var li_count = Math.floor(window_width / 202);
+	var li_margin_total = Math.abs(li_count * 202 - window_width);
+	var li_margin = (li_margin_total / li_count) / 2 ;
 	$(".ul li").css({
 		'margin-left' : li_margin,
 		'margin-right': li_margin
 		});	
-	});
+	});*/
 	
 </script>

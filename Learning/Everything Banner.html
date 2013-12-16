@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+#bannerContainer {
+	width: 778px;
+	height: 257px;
+	border: 1px solid #000;
+	position:relative;
+}
+#bannerContainer .ul, #bannerContainer .ul li
+{
+	padding:0px;
+	margin:0px;
+	list-style-type:none;
+	}
+#bannerContainer .ul li
+{
+	position:absolute;
+	display:none;
+	}
+/*.nav
+{
+	background-color:#fff;
+	border:2px solid #dedede;
+	border-radius:30px;
+	width:30px;
+	height:30px;
+	display:block;
+	position:absolute;
+	z-index:9999;
+	top:50%;
+	margin-top:-15px;
+	font:bold 9px verdana;
+	color:#333;
+	text-decoration:none;
+	text-transform:uppercase;
+	text-align:center;
+	vertical-align:middle;
+	opacity:0.8;
+	}
+.nav.left{
+	left:10px;
+	}
+.nav.right{
+	right:10px;
+	}*/
+	
+	
+.sliderName{
+	position:absolute;
+	z-index:9999;
+	padding:0px;
+	margin:0px;
+	bottom:0px;
+	list-style-type:none;	
+	background-color:#808080;
+	width:100%;
+	}
+.sliderName>li {
+	float:left;
+	background-color:#808080;
+	border-right:1px solid #666;
+	padding:5px 20px;
+	font:bold 11px verdana;
+	color:#fff;
+	cursor:pointer;
+	}
+.sliderName .active {	
+	background-color:#fff;
+	color:#333;	
+	}
+
+
+</style>
+<script src="http://code.jquery.com/jquery-1.10.2.js" type="text/javascript"></script>
+<script src="scripts/my_script.js" type="text/javascript"></script>
+</head>
+
+<body>
+<script type="text/javascript">
+$(document).ready(function(){
+	$("#bannerContainer").bannerContainer({
+		slideName: '.sliderName',
+		animationTime:1000, //animationTime will be less than 'waitingTime'
+		waitingTime:2000,
+		slideNames: true
+	});	
+});
+</script>
+<div id="bannerContainer">
+<!--<a href="#" class="nav left"></a>
+<a href="#" class="nav right"></a>-->
+<ul class="ul">
+<li><a name="Computer Deals"><img src="images/1.jpg" width="778" height="257"  alt=""/></a></li>
+<li><a name="Second Slide"><img src="images/2.jpg" width="778" height="257"  alt=""/></a></li>
+<li><a name="Third Slide"><img src="images/3.jpg" width="778" height="257"  alt=""/></a></li>
+<li><a name="Fourth Slide"><img src="images/4.jpg" width="778" height="257"  alt=""/></a></li>
+<li><a name="Fifth Slide"><img src="images/5.jpg" width="778" height="257"  alt=""/></a></li>
+<li><a name="Sixth Slide"><img src="images/6.jpg" width="778" height="257"  alt=""/></a></li>
+</ul>
+<ul class="sliderName"></ul>
+</div>
+
+
+</body>
+</html>
